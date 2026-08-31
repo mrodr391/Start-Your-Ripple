@@ -28,7 +28,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: url("https://d35lvrk9fb4ftj.cloudfront.net/eyJidWNrZXQiOiJkcm9wbWFyayIsImtleSI6IjUyMDQzL2EwZWU2ZGE2ZDZjMGIxNDQwMGY4YzgwNjE4YWViYjYyNjVmZjY5MDhiZDA1NjJlODgxYWRjYjU0MjBhZjIzMGUvcHJldmlldy9jaGFyaXR5X3dhdGVyX1RhbnphbmlhX1RhcmFTaHVwZVBob3RvZ3JhcGh5XzAwNzQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6NjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=") center/cover no-repeat fixed;
+  background: linear-gradient(
+      rgba(254, 216, 193, 0.28),
+      rgba(254, 216, 193, 0.28)
+    ),
+    url("img/eyJidWNrZXQiOiJkcm9wbWFyayIsImtleSI6IjUyMDQzL2RmNGFiMmMyOGM4MDQ5OWY3NjAxNGMwM2E0NmQ2ZDk2ZGE0ODNkNTkyMWZmMjZlYjFmZGRjZDk3MzYwMGEwMWMvcHJldmlldy9BbWJvdGUtQ2hhcml0eVdhdGVyLTA5NjY3LmpwZyIs.jpg") center/cover no-repeat fixed;
   font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
   color: var(--text-dark);
 }
