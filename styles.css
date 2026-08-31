@@ -28,7 +28,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat fixed;
+  background: url("https://d35lvrk9fb4ftj.cloudfront.net/eyJidWNrZXQiOiJkcm9wbWFyayIsImtleSI6IjUyMDQzL2EwZWU2ZGE2ZDZjMGIxNDQwMGY4YzgwNjE4YWViYjYyNjVmZjY5MDhiZDA1NjJlODgxYWRjYjU0MjBhZjIzMGUvcHJldmlldy9jaGFyaXR5X3dhdGVyX1RhbnphbmlhX1RhcmFTaHVwZVBob3RvZ3JhcGh5XzAwNzQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6NjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=") center/cover no-repeat fixed;
   font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
   color: var(--text-dark);
 }
@@ -155,7 +155,7 @@ a {
 .hero-card {
   width: 100%;
   margin: 0;
-  background: #fed8c1;
+  background: rgba(254, 216, 193, 0.12);
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -185,11 +185,12 @@ a {
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-  background: rgba(255, 247, 225, 0.45);
+  background: rgba(255, 247, 225, 0.2);
   border-radius: 19px;
   box-sizing: border-box;
   padding: 12px 20px;
   margin-top: 0;
+  backdrop-filter: blur(1px);
 }
 
 .hero-nav a {
