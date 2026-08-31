@@ -133,10 +133,9 @@ a {
 }
 
 .hero {
-  background: #fed8c1;
+  padding: 6rem 0;
+  background: var(--peach);
   text-align: center;
-  padding: 4rem 2rem 2rem;
-  min-height: 100vh;
 }
 
 .hero-card {
@@ -148,6 +147,12 @@ a {
   box-shadow: none;
   padding: 12px 24px 18px;
   min-height: 100vh;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 0;
 }
 
 .hero-header {
@@ -163,8 +168,13 @@ a {
   display: flex;
   gap: 28px;
   flex-wrap: wrap;
-  justify-content: center;
-  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  background: rgba(255, 247, 225, 0.45);
+  border-radius: 19px;
+  box-sizing: border-box;
+  padding: 12px 20px;
 }
 
 .hero-nav a {
@@ -187,10 +197,11 @@ a {
 }
 
 .brand-icon {
-  width: 30px;
-  height: 30px;
+  width: 240px;
+  height: auto;
   object-fit: contain;
   display: block;
+  background: transparent;
 }
 
 .brand-name,
@@ -285,6 +296,7 @@ a {
 
 .photo-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
   margin-top: 16px;
@@ -292,25 +304,26 @@ a {
 }
 
 .photo-card {
+  flex: 1 1 calc(50% - 18px);
+  max-width: calc(50% - 18px);
   margin: 0;
   overflow: hidden;
-  border: 2px solid rgba(27, 39, 52, 0.2);
-  border-radius: 6px;
+  border: 3px solid var(--blue);
+  border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .photo-card img {
+  width: 100%;
   height: 280px;
   object-fit: cover;
+  display: block;
 }
 
 .photo-card-left,
-.photo-card-middle {
-  width: 27%;
-}
-
+.photo-card-middle,
 .photo-card-right {
-  width: 36%;
+  width: auto;
 }
 
 @media (max-width: 760px) {
