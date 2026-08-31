@@ -1,198 +1,362 @@
-/* charity: water Brand Colors & Fonts
-
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
+/*
+  charity: water landing page
+  Beginner-friendly CSS with comments.
 */
 
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
+:root {
+  --peach: #F7E2D4;
+  --clay: #C26A5A;
+  --blue: #3A6EA5;
+  --gold: #E8B44C;
+  --white: #FFFFFF;
+  --dark-bg: #111b22;
+  --panel-bg: var(--peach);
+  --panel-border: rgba(194, 106, 90, 0.35);
+  --accent-blue: var(--blue);
+  --deep-blue: var(--blue);
+  --text-dark: #1a1d1f;
+  --text-soft: #3d4c58;
+  --sidebar-text: #dfe8ee;
+  --sidebar-muted: #98a9b4;
+  --drop-shadow: rgba(58, 110, 165, 0.12);
+}
 
-/* Set up the main font and background color for the whole page */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  color: #222;
+  min-height: 100vh;
+  background: #fed8c1;
+  font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
+  color: var(--text-dark);
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
-}
-
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
-}
-
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
-}
-
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
+img {
+  display: block;
   width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
 }
 
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
+button,
+a {
+  font: inherit;
+}
+
+.page-shell {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  display: none;
+}
+
+.close-button {
+  width: 100%;
   border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--sidebar-text);
+  border-radius: 18px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 26px;
+}
+
+.side-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.icon-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--sidebar-muted);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.icon-item.active {
+  color: var(--sidebar-text);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.label {
+  line-height: 1.2;
+}
+
+.main-panel {
+  flex: 1;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.top-strip {
+  height: 76px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 12px 12px 0;
+}
+
+.top-line {
+  width: 100%;
+  max-width: 760px;
+  height: 22px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.08)
+  );
+  margin: 0 auto;
+}
+
+.hero {
+  background: #fed8c1;
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  min-height: 100vh;
+}
+
+.hero-card {
+  width: 100%;
+  margin: 0;
+  background: #fed8c1;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 12px 24px 18px;
+  min-height: 100vh;
+}
+
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding: 10px 8px 0;
+}
+
+.hero-nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
+
+.hero-nav a {
+  text-decoration: none;
+  color: #245d73;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-left: auto;
+  font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
+  color: #1d1d1d;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-name,
+.logo {
+  color: #1f1f1f;
+  font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
+}
+
+.brand-name {
+  font-size: 1.05rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-copy {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 4rem);
+  line-height: 1.05;
+  color: #bf6c46;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy p {
+  margin: 18px 0 0;
+  font-size: clamp(1.25rem, 1.4vw, 2rem);
+  color: var(--blue);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.hero h2 {
+  color: var(--clay);
+  font-size: 3rem;
+}
+
+.hero p {
+  color: var(--blue);
+  font-size: 1.25rem;
+}
+
+.cta {
+  background: var(--gold);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+.cta-drop {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  margin: 18px auto 26px;
+  background: rgba(58, 110, 165, 0.83);
+  border-radius: 50% 50% 48% 48% / 46% 46% 54% 54%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(58, 110, 165, 0.2);
+  text-align: center;
+  transform: translateY(6px);
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+.cta-drop::before {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 28px;
+  background: rgba(58, 110, 165, 0.83);
+  border-radius: 0 0 18px 18px;
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
-
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
-  }
-
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
-  }
-
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
+.cta-drop span {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
+.photo-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+  padding-bottom: 8px;
+}
+
+.photo-card {
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid rgba(27, 39, 52, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.photo-card img {
+  height: 280px;
+  object-fit: cover;
+}
+
+.photo-card-left,
+.photo-card-middle {
+  width: 27%;
+}
+
+.photo-card-right {
+  width: 36%;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    display: block;
   }
 
-  .impact-image {
-    width: 300px;
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .side-icons {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .icon-item {
+    width: auto;
+    min-width: 68px;
+  }
+
+  .hero-card {
+    width: min(96%, 700px);
+    margin-top: 20px;
+    padding: 10px 12px 14px;
+  }
+
+  .hero-header {
+    flex-direction: column;
+  }
+
+  .hero-nav {
+    gap: 12px 18px;
+  }
+
+  .photo-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-card-left,
+  .photo-card-middle,
+  .photo-card-right {
+    width: min(80%, 380px);
   }
 }
