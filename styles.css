@@ -4,11 +4,11 @@
 */
 
 :root {
-  --peach: #F7E2D4;
-  --clay: #C26A5A;
-  --blue: #3A6EA5;
-  --gold: #E8B44C;
-  --white: #FFFFFF;
+  --peach: #fed8c1;
+  --clay: #bf6c46;
+  --blue: #77a8bb;
+  --gold: #ffc907;
+  --white: #fff7e1;
   --dark-bg: #111b22;
   --panel-bg: var(--peach);
   --panel-border: rgba(194, 106, 90, 0.35);
