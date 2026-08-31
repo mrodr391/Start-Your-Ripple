@@ -169,7 +169,7 @@ a {
 
 .hero-nav a {
   text-decoration: none;
-  color: #245d73;
+  color: var(--blue);
   font-size: 0.72rem;
   font-weight: 600;
 }
@@ -181,7 +181,7 @@ a {
   gap: 8px;
   margin-left: auto;
   font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
-  color: #1d1d1d;
+  color: var(--text-dark);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -195,7 +195,7 @@ a {
 
 .brand-name,
 .logo {
-  color: #1f1f1f;
+  color: var(--text-dark) ;
   font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
 }
 
