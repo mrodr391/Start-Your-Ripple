@@ -52,7 +52,19 @@
           </div>
         </section>
       </main>
+
+      <!-- Footer with small site info -->
+      <footer class="site-footer">
+        <div class="container">
+          <p>&copy; <span id="year"></span> Charity Water — Miniature Happiness</p>
+        </div>
+      </footer>
     </div>
+
+    <!-- Tiny script to set the current year (beginner-friendly) -->
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
 
